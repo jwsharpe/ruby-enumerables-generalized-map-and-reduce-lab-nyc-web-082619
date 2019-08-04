@@ -10,7 +10,7 @@ end
 def reduce(array, sum=0)
   value = 0;
   for i in array do
-    value += yield
+    value += yield()
   end
   return value
   
