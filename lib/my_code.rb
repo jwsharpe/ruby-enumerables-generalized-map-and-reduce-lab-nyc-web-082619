@@ -7,15 +7,15 @@ def map(array)
   return new_array
 end
 
-def reduce(array, starting_point = nil)
+def reduce(array, start = nil)
     i = 0 
-    if starting_point  
-          result = starting_point
+    if start  
+      result = start
     else
-      result = source_array[i] 
+      result = array[i] 
       i += 1 
-    end   
-    while i < source_array.length do
+    end
+    for i in array.length do
      result = yield(result, source_array[i])
      i += 1 
     end 
