@@ -7,17 +7,17 @@ def map(array)
   return new_array
 end
 
-def reduce(array, starting_value = nil)
-  if starting_value != nil 
-     block = starting_value
-      i = 0
-   else 
-     block = array[0]
-     i = 1 
-   end 
+def reduce(array, start = nil)
+  if start 
+    result = start
+    i = 0
+  else 
+    result = array[0]
+    i = 1 
+  end 
   while i < array.length 
-      block = (yield(block, array[i]))
+    result = (yield(result, array[i]))
     i += 1
-end 
-   return block 
- end  
+  end 
+  return result 
+end  
