@@ -8,16 +8,19 @@ def map(array)
 end
 
 def reduce(array, start = nil)
+  i = 0
+  
   if start 
     result = start
-    i = 0
   else 
     result = array[0]
-    i = 1 
+    i = 1
   end 
+  
   while i < array.length 
     result = (yield(result, array[i]))
     i += 1
   end 
+  
   return result 
 end  
